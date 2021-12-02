@@ -504,14 +504,14 @@ decimal_integer_literal
     
 decimal_digits
     : decimal_digit
-    | decimal_digit decimal_digit_or_underscore* decimal_digit
+    | decimal_digit Decimal_Digit_Or_Underscore* decimal_digit
     ;
 
 decimal_digit
     : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
     ;
 
-decimal_digit_or_underscore
+fragment Decimal_Digit_Or_Underscore
     : decimal_digit
     | '_'
     ;
@@ -521,40 +521,40 @@ integer_type_suffix
     ;
     
 hexadecimal_integer_literal
-    : '0x' hex_digits+ integer_type_suffix?
-    | '0X' hex_digits+ integer_type_suffix?
+    : '0x' Hex_Digits+ integer_type_suffix?
+    | '0X' Hex_Digits+ integer_type_suffix?
     ;
 
-hex_digits
-    : '_'* hex_digit
-    | '_'* hex_digit hex_digit_or_underscore* hex_digit
+fragment Hex_Digits
+    : '_'* Hex_Digit
+    | '_'* Hex_Digit Hex_Digit_Or_Underscore* Hex_Digit
     ;
 
 hex_digit
     : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
     | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f';
 
-hex_digit_or_underscore
-    : hex_digit
+fragment Hex_Digit_Or_Underscore
+    : Hex_Digit
     | '_'
     ;
 
-Binary_Integer_Literal
+fragment Binary_Integer_Literal
     : '_'* '0b' Binary_Digits+ Integer_Type_Suffix?
     | '_'* '0B' Binary_Digits+ Integer_Type_Suffix?
     ;
 
-Binary_Digits
+fragment Binary_Digits
     : Binary_Digit
     | Binary_Digit Binary_Digit_Or_Underscore* Binary_Digit
     ;
 
-Binary_Digit
+fragment Binary_Digit
     : '0'
     | '1'
     ;
 
-Binary_Digit_Or_Underscore
+fragment Binary_Digit_Or_Underscore
     : Binary_Digit
     | '_'
     ;
