@@ -629,3 +629,20 @@ namespace System.Runtime.CompilerServices
     }
 }
 ```
+
+```csharp
+namespace System
+{
+    public ref struct ReadOnlySpan<T>
+    {
+    }
+}
+
+namespace System
+{
+    public ref struct Span<T>
+    {
+        public static implicit operator ReadOnlySpan<T>(Span<T> span);
+    }
+}
+```
