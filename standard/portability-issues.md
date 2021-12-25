@@ -16,8 +16,8 @@ The behavior is undefined in the following circumstances:
 1.  When the unary `*` operator is applied to a pointer containing an invalid value ([§23.6.2](unsafe-code.md#2362-pointer-indirection)).
 1.  When a pointer is subscripted to access an out-of-bounds element ([§23.6.4](unsafe-code.md#2364-pointer-element-access)).
 1.  Modifying objects of managed type through fixed pointers ([§23.7](unsafe-code.md#237-the-fixed-statement)).
-1.  The content of memory newly allocated by `stackalloc` ([§23.9](unsafe-code.md#239-stack-allocation)).
-1.  Attempting to allocate a negative number of items using `stackalloc`([§23.9](unsafe-code.md#239-stack-allocation)).
+1.  The content of memory newly allocated by `stackalloc` (§stack-allocation).
+1.  Attempting to allocate a negative number of items using `stackalloc`(§stack-allocation).
 
 ## B.3 Implementation-defined behavior
 
@@ -37,7 +37,7 @@ A conforming implementation is required to document its choice of behavior in ea
 1.  The result of the `sizeof` operator for non-pre-defined value types ([§23.6.9](unsafe-code.md#2369-the-sizeof-operator)).
 1.  The behavior of the `fixed` statement if the array expression is `null` or if the array has zero elements ([§23.7](unsafe-code.md#237-the-fixed-statement)).
 1.  The behavior of the `fixed` statement if the string expression is `null` ([§23.7](unsafe-code.md#237-the-fixed-statement)).
-1.  The value returned when a stack allocation of size zero is made ([§23.9](unsafe-code.md#239-stack-allocation)).
+1.  The value returned when a stack allocation of size zero is made (§stack-allocation).
 
 ## B.4 Unspecified behavior
 
